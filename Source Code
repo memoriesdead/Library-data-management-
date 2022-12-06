@@ -1,0 +1,60 @@
+CREATE DATABASE Library;
+CREATE TABLE employees (
+	employee_id int,
+	first_name VARCHAR(50),
+	last_name VARCHAR(50), 
+	hourly_pay DECIMAL(5, 2),
+	hire_date DATE
+
+);
+
+CREATE TABLE books (
+    book_id int,
+    title VARCHAR(50),
+    author VARCHAR(50),
+    publisher VARCHAR(50),
+    year_published int,
+    employee_id int
+);
+
+CREATE TABLE book_loans (
+    book_id int,
+    employee_id int,
+    loan_date DATE,
+    return_date DATE
+);
+
+-- Language: sql
+INSERT INTO employees VALUES (1, 'John', 'Smith', 10.00, '2018-01-01');
+INSERT INTO employees VALUES (2, 'Jane', 'Doe', 10.00, '2018-01-01');
+INSERT INTO employees VALUES (3, 'Bob', 'Jones', 10.00, '2018-01-01');
+INSERT INTO employees VALUES (4, 'Sally', 'Smith', 10.00, '2018-01-01');
+INSERT INTO employees VALUES (5, 'Joe', 'Doe', 10.00, '2018-01-01');
+INSERT INTO employees VALUES (6, 'Mary', 'Jones', 10.00, '2018-01-01');
+
+INSERT INTO books VALUES (1, 'The Hobbit', 'J.R.R. Tolkien', 'Houghton Mifflin', 1937, 1);
+INSERT INTO books VALUES (2, 'The Fellowship of the Ring', 'J.R.R. Tolkien', 'Houghton Mifflin', 1954, 1);
+INSERT INTO books VALUES (3, 'The Two Towers', 'J.R.R. Tolkien', 'Houghton Mifflin', 1954, 1);
+INSERT INTO books VALUES (4, 'The Return of the King', 'J.R.R. Tolkien', 'Houghton Mifflin', 1955, 1);
+
+INSERT INTO books VALUES (5, 'The Hitchhiker''s Guide to the Galaxy', 'Douglas Adams', 'Pan Books', 1979, 2);
+INSERT INTO books VALUES (6, 'The Restaurant at the End of the Universe', 'Douglas Adams', 'Pan Books', 1980, 2);
+INSERT INTO books VALUES (7, 'Life, the Universe and Everything', 'Douglas Adams', 'Pan Books', 1982, 2);
+INSERT INTO books VALUES (8, 'So Long, and Thanks for All the Fish', 'Douglas Adams', 'Pan Books', 1984, 2);
+INSERT INTO books VALUES (9, 'Mostly Harmless', 'Douglas Adams', 'Pan Books', 1992, 2);
+INSERT INTO books VALUES (10, 'The Hitchhiker''s Guide to the Galaxy', 'Douglas Adams', 'Pan Books', 1979, 3);
+
+-- take user input and store it into the database
+-- Language: sql
+INSERT INTO book_loans VALUES (1, 1, '2018-01-01', '2018-01-08');
+INSERT INTO book_loans VALUES (2, 1, '2018-01-01', '2018-01-08');
+INSERT INTO book_loans VALUES (3, 1, '2018-01-01', '2018-01-08');
+INSERT INTO book_loans VALUES (4, 1, '2018-01-01', '2018-01-08');
+INSERT INTO book_loans VALUES (5, 2, '2018-01-01', '2018-01-08');
+INSERT INTO book_loans VALUES (6, 2, '2018-01-01', '2018-01-08');
+INSERT INTO book_loans VALUES (7, 2, '2018-01-01', '2018-01-08');
+INSERT INTO book_loans VALUES (8, 2, '2018-01-01', '2018-01-08');
+INSERT INTO book_loans VALUES (9, 2, '2018-01-01', '2018-01-08');
+INSERT INTO book_loans VALUES (10, 3, '2018-01-01', '2018-01-08');
+
+
